@@ -1,0 +1,2604 @@
+Model Report
+
+Starter Class Diagram
+
+Version  1.0  ●  Proposed
+
+ 
+	Date/Time Generated:	10/18/2025 4:05:12 PM
+	Author:	mehrshad
+
+EA Repository :  
+CREATED WITH	 
+
+
+
+ 
+Table of Contents
+
+
+Starter Class Diagram	4
+Starter Class Diagram diagram	4
+DBManager	4
+Event	6
+HeartRateData	6
+Order	7
+Patient	7
+STData	7
+StressTest	8
+User	8
+GRPCClient	8
+IGRPCClient	9
+IIntractable	10
+PAverageComplex	10
+PContextView	10
+PRealtime	11
+PRegisterPatient	11
+PRegisterUser	12
+PSTProfile	12
+PTrends	12
+PWindowTiles	12
+PZoomedST	12
+IPAverageComplex	12
+IPContextView	13
+IPRealtime	13
+IPresentable	14
+IPSTPRofile	14
+IPTrends	14
+IPZoomedST	15
+GeneralGraph	15
+VAverageComplex	16
+VContextView	17
+VRealtime	18
+VZoomedST	20
+IVAverageComplex	21
+IVContextView	21
+IViewable	21
+IVRealtime	22
+IVZoomedST	22
+Entity	22
+DBManager	23
+Event	24
+HeartRateData	24
+Order	25
+Patient	25
+STData	25
+StressTest	26
+User	26
+Intractor	27
+ECG	27
+ECGDataEventArgs	27
+GRPCClient	27
+HRDataEventArgs	28
+STDataEventArgs	28
+IGRPCClient	29
+IIntractable	29
+Presenter	30
+PAverage	30
+PAverageComplex	30
+PContextView	30
+PRealtime	31
+PRegisterPatient	31
+PRegisterUser	31
+PSTProfile	32
+PTrends	32
+PWindowTiles	32
+PZoomedST	32
+IPAverageComplex	32
+IPContextView	33
+IPContextView	33
+IPRealtime	34
+IPresentable	34
+IPSTPRofile	35
+IPTrends	35
+IPZoomedST	35
+Router	36
+View	37
+GeneralGraph	37
+VAverageComplex	38
+VContextView	38
+VRealtime	40
+VZoomedST	41
+IVAverageComplex	42
+IVContextView	43
+IViewable	43
+IVRealtime	43
+IVZoomedST	44
+Entity	44
+Intractor	44
+Presenter	44
+Router	44
+MainAppController	45
+View	45
+VLogin	45
+VSTProfile	45
+VTrends	46
+IVSTProfile	47
+IVTrends	47
+
+ 
+Starter Class Diagram
+Package in package 'Model'
+
+Starter Class Diagram
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 1/23/2019
+
+
+
+Starter Class Diagram diagram
+Class diagram in package 'Starter Class Diagram'
+
+Starter Class Diagram 
+Version 1.0
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+ 
+
+Figure 1:  Starter Class Diagram
+
+DBManager
+Class in package 'Entity'
+
+DBManager 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/13/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   getPatient (id : int ) : Patient Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   getUser (id : int ) : User Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   getOrder (id : int ) : Order Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   getStressTest (id : int ) : StressTest Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   setOrder (order : Order ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   setUser (user : User ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   setPatient (patient : Patient ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   setStressTest (stressTest : StressTest ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   deleteOrder (id : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   deletePatient (id : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   deleteUser (id : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   deleteStressTest (id : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   createUser (user : User ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   createPatient (patient : Patient ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   createOrder (order : Order ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   createStressTest (stressTest : stressTest ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   createEvent (event : Event ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   deleteEvent (id : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   getEvent (id : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   setEvent (event : Event ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+Event
+Class in package 'Entity'
+
+Event 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+ATTRIBUTES
+
+   startTime : int  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   endTime : int  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   name : int  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+  
+
+HeartRateData
+Class in package 'Entity'
+
+HeartRateData 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/16/2025.  Last modified 9/27/2025
+
+ATTRIBUTES
+
+   heartrate : float  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   timestamp : string  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   hrPerLead : float[]  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   confidence : float  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+ASSOCIATIONS
+
+   Association (direction: Unspecified)
+
+Source: Public (Class) HeartRateData 
+	Target: Public (Class) GRPCClient «Focus»
+
+
+  
+
+Order
+Class in package 'Entity'
+
+Order 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+Patient
+Class in package 'Entity'
+
+Patient 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+STData
+Class in package 'Entity'
+
+STData 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/16/2025.  Last modified 9/27/2025
+
+ATTRIBUTES
+
+   stLevels : float[]  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   stSlopes : float[]  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   heartrate : float  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   timestamp : string  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   averageComplexes : float[][]  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   beatsAveragedCount : int  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   confidence : float  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+ASSOCIATIONS
+
+   Association (direction: Unspecified)
+
+Source: Public (Class) STData 
+	Target: Public (Class) GRPCClient «Focus»
+
+
+  
+
+StressTest
+Class in package 'Entity'
+
+StressTest 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+User
+Class in package 'Entity'
+
+User 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+GRPCClient
+Class «Focus» in package 'Intractor'
+
+GRPCClient 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+OUTGOING STRUCTURAL RELATIONSHIPS
+
+   Realization from «Focus» GRPCClient to  IGRPCClient
+[ Direction is 'Source -> Destination'. ]
+
+
+ATTRIBUTES
+
+   _channel : GrpcChannel  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   _client : ECGStreamerClient  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   _cancellationTokenSource : CancellationTokenSource  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+ASSOCIATIONS
+
+   Association (direction: Unspecified)
+
+Source: Public (Class) STData 
+	Target: Public (Class) GRPCClient «Focus»
+
+
+   Association (direction: Unspecified)
+
+Source: Public (Class) HeartRateData 
+	Target: Public (Class) GRPCClient «Focus»
+
+
+OPERATIONS
+
+   ConnectAsync (ip : string , port : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   GetCurrentConfigAsync () : DSPConfig Public
+
+Properties:  
+Implements = IGRPCClient.GetCurrentConfigAsync
+ImplementsGuid = {A311165A-2AC2-43d8-A3C4-BB3F736ECC76}
+[ Stereotype is «async». Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   Disconnect () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   TriggerPrintAsync (reason : string ) : DSPResponse Public
+
+Properties:  
+Implements = IGRPCClient.TriggerPrintAsync
+ImplementsGuid = {1CADC9D1-34C9-4f85-A249-0694429451C7}
+[ Stereotype is «async». Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   UpdateDSPConfigAsync (config : DSPConfig ) : ConfigResponse Public
+
+Properties:  
+Implements = IGRPCClient.UpdateDSPConfigAsync
+ImplementsGuid = {7558D6E7-95A8-4ee7-A5D5-A9BE5647817C}
+[ Stereotype is «async». Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IGRPCClient
+Interface in package 'Intractor'
+
+IGRPCClient 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/15/2025.  Last modified 9/27/2025
+
+INCOMING STRUCTURAL RELATIONSHIPS
+
+   Realization  from «Focus» GRPCClient to  IGRPCClient
+[ Direction is 'Source -> Destination'. ]
+
+
+OPERATIONS
+
+   GetCurrentConfigAsync () : DSPConfig Public
+[ Stereotype is «async». Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   TriggerPrintAsync (reason : string ) : DSPResponse Public
+[ Stereotype is «async». Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   UpdateDSPConfigAsync (config : DSPConfig ) : ConfigResponse Public
+[ Stereotype is «async». Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IIntractable
+Interface in package 'Intractor'
+
+IIntractable 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/15/2025.  Last modified 9/27/2025
+
+  
+
+PAverageComplex
+Class «Focus» in package 'Presenter'
+
+PAverageComplex 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+PContextView
+Class «Focus» in package 'Presenter'
+
+PContextView 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+OUTGOING STRUCTURAL RELATIONSHIPS
+
+   Realization from «Focus» PContextView to  IPContextView
+[ Direction is 'Source -> Destination'. ]
+
+
+ATTRIBUTES
+
+   leadNumber : int  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+OPERATIONS
+
+   RegisterEvent (start : int , end : int , name : string ) : void Public
+
+Properties:  
+Implements = IPContextView.registerEvent
+ImplementsGuid = {8EC8B444-1F6F-4ee8-8F26-4254771EBD50}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   UpdateEvent (start : int , end : int , name : string ) : void Public
+
+Properties:  
+Implements = IPContextView.updateEvent
+ImplementsGuid = {C352842D-B0C0-416d-9710-231943BBD2E2}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   DeleteEvent (start : int , end : int , name : string ) : void Public
+
+Properties:  
+Implements = IPContextView.deleteEvent
+ImplementsGuid = {9CDC0695-136C-4a88-94BB-41D3B91B4EBB}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ChangeLead (leadIdx : int ) : void Public
+
+Properties:  
+Implements = IPContextView.changeLead
+ImplementsGuid = {578AE3CA-97EC-4973-B025-2A30B693691C}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   GetTestInfo () : void Public
+
+Properties:  
+Implements = IPContextView.getTestInfo
+ImplementsGuid = {543B5FB5-B62C-4345-80CD-532E8565D462}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+PRealtime
+Class «Focus» in package 'Presenter'
+
+PRealtime 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+PRegisterPatient
+Class «Focus» in package 'Presenter'
+
+PRegisterPatient 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+PRegisterUser
+Class «Focus» in package 'Presenter'
+
+PRegisterUser 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+PSTProfile
+Class «Focus» in package 'Presenter'
+
+PSTProfile 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+PTrends
+Class «Focus» in package 'Presenter'
+
+PTrends 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+PWindowTiles
+Class «Focus» in package 'Presenter'
+
+PWindowTiles 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+PZoomedST
+Class «Focus» in package 'Presenter'
+
+PZoomedST 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+ATTRIBUTES
+
+   leadNumber : int  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+  
+
+IPAverageComplex
+Interface in package 'Presenter'
+
+IPAverageComplex 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/18/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   ReceiveSTData (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ChangeZoomedLead (leadNumber : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IPContextView
+Interface in package 'Presenter'
+
+IPContextView 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+INCOMING STRUCTURAL RELATIONSHIPS
+
+   Realization  from «Focus» PContextView to  IPContextView
+[ Direction is 'Source -> Destination'. ]
+
+
+OPERATIONS
+
+   RegisterEvent (start : int , end : int , name : string ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   UpdateEvent (start : int , end : int , name : string ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   DeleteEvent (start : int , end : int , name : string ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ChangeLead (leadIdx : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   GetTestInfo () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IPRealtime
+Interface in package 'Presenter'
+
+IPRealtime 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   ReceiveNewChunk (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ToggleLPFilter (value : bool ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ToggleACFilter (value : bool ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ToggleHPFilter (value : bool ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ToggleBaselineFilter (value : bool ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ToggleSTEFFilter (value : bool ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IPresentable
+Interface in package 'Presenter'
+
+IPresentable 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/13/2025.  Last modified 9/27/2025
+
+  
+
+IPSTPRofile
+Interface in package 'Presenter'
+
+IPSTPRofile 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/18/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   ReceiveSTData () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IPTrends
+Interface in package 'Presenter'
+
+IPTrends 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/18/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   ReceiveSTData () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IPZoomedST
+Interface in package 'Presenter'
+
+IPZoomedST 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/18/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   ReceiveSTData (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ChangeLead (leadNumber : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+GeneralGraph
+Class in package 'View'
+
+GeneralGraph 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+INCOMING STRUCTURAL RELATIONSHIPS
+
+   Realization  from «Focus» VTrends to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+   Realization  from «Focus» VContextView to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+   Realization  from «Focus» VZoomedST to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+   Realization  from «Focus» VAverageComplex to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+   Realization  from «Focus» VRealtime to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+   Realization  from «Focus» VSTProfile to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+ATTRIBUTES
+
+   chart : LightningChart  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+OPERATIONS
+
+   createChart () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   onChartLoaded (sender : Object , event : RoutedEventArgs ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+VAverageComplex
+Class «Focus» in package 'View'
+
+VAverageComplex 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/16/2025.  Last modified 9/27/2025
+
+OUTGOING STRUCTURAL RELATIONSHIPS
+
+   Realization from «Focus» VAverageComplex to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+OPERATIONS
+
+   CreateChart () : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   OnChartLoaded (sender : Object , event : RoutedEventArgs ) : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AppendSamples (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ChangeLayout () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+VContextView
+Class «Focus» in package 'View'
+
+VContextView 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+OUTGOING STRUCTURAL RELATIONSHIPS
+
+   Realization from «Focus» VContextView to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+   Realization from «Focus» VContextView to  IVContextView
+[ Direction is 'Source -> Destination'. ]
+
+
+ATTRIBUTES
+
+   queue : Queue<float[]>  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   stopWatch : StopWatch  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   queueLock : Object  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   offline : bool  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   currentChunk : float[]  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+OPERATIONS
+
+   AnnotateEvent (start : int , end : int , name : string ) : void Public
+
+Properties:  
+Implements = IVContextView.annotateEvent
+ImplementsGuid = {8CEE09DE-21E0-4d30-BD9F-E50313432E10}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   CreateChart () : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AppendSamples (data : float[] ) : void Public
+
+Properties:  
+Implements = IVContextView.appendSamples
+ImplementsGuid = {2560D8F1-2936-4286-B0D3-B9279757DC21}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   OnChartLoaded (sender : Object , event : RoutedEventArgs ) : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[] ) : void Public
+
+Properties:  
+Implements = IVContextView.refreshData
+ImplementsGuid = {E30C793F-D27D-48de-ACA9-BD1134281596}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   UpdateEventInfo (stage : int , time : int ) : void Public
+
+Properties:  
+Implements = IVContextView.updateEventInfo
+ImplementsGuid = {1BFE6B67-E4B4-46e0-8E97-745CA00F72B1}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   FeedData () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   Start () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   Stop () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+VRealtime
+Class «Focus» in package 'View'
+
+VRealtime 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+OUTGOING STRUCTURAL RELATIONSHIPS
+
+   Realization from «Focus» VRealtime to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+ATTRIBUTES
+
+   currentChunk : float[][]  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   offline : bool  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   queue : Queue<float[][]>  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   queueLock : Object  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   stopWatch : StopWatch  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   layout : int  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+OPERATIONS
+
+   CreateChart () : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   OnChartLoaded (sender : Object , event : RoutedEventArgs ) : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AppendSamples (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   FeedData () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   Start () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   Stop () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ChangeLayout () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+VZoomedST
+Class «Focus» in package 'View'
+
+VZoomedST 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/18/2025.  Last modified 9/27/2025
+
+OUTGOING STRUCTURAL RELATIONSHIPS
+
+   Realization from «Focus» VZoomedST to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+OPERATIONS
+
+   CreateChart () : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   OnChartLoaded (sender : Object , event : RoutedEventArgs ) : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AppendSamples (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ChangeLayout () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IVAverageComplex
+Interface in package 'View'
+
+IVAverageComplex 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/18/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   AppendSamples (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AnnotateST (stLevels : float[] , stSlopes : float[] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IVContextView
+Interface in package 'View'
+
+IVContextView 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+INCOMING STRUCTURAL RELATIONSHIPS
+
+   Realization  from «Focus» VContextView to  IVContextView
+[ Direction is 'Source -> Destination'. ]
+
+
+OPERATIONS
+
+   AnnotateEvent (start : int , end : int , name : string ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AppendSamples (data : float[] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   UpdateEventInfo (stage : int , time : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IViewable
+Interface in package 'View'
+
+IViewable 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+  
+
+IVRealtime
+Interface in package 'View'
+
+IVRealtime 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   AppendSamples (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IVZoomedST
+Interface in package 'View'
+
+IVZoomedST 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/18/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   AppendSamples (data : float[] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AnnotateST (stLevel : float , stSlope : float ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+
+ 
+
+Entity
+Package in package 'Starter Class Diagram'
+
+Entity
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/27/2025.  Last modified 9/27/2025
+
+
+
+DBManager
+Class in package 'Entity'
+
+DBManager 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/13/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   getPatient (id : int ) : Patient Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   getUser (id : int ) : User Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   getOrder (id : int ) : Order Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   getStressTest (id : int ) : StressTest Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   setOrder (order : Order ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   setUser (user : User ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   setPatient (patient : Patient ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   setStressTest (stressTest : StressTest ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   deleteOrder (id : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   deletePatient (id : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   deleteUser (id : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   deleteStressTest (id : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   createUser (user : User ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   createPatient (patient : Patient ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   createOrder (order : Order ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   createStressTest (stressTest : stressTest ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   createEvent (event : Event ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   deleteEvent (id : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   getEvent (id : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   setEvent (event : Event ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+Event
+Class in package 'Entity'
+
+Event 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+ATTRIBUTES
+
+   startTime : int  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   endTime : int  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   name : int  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+  
+
+HeartRateData
+Class in package 'Entity'
+
+HeartRateData 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/16/2025.  Last modified 9/27/2025
+
+ATTRIBUTES
+
+   heartrate : float  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   timestamp : string  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   hrPerLead : float[]  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   confidence : float  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+ASSOCIATIONS
+
+   Association (direction: Unspecified)
+
+Source: Public (Class) HeartRateData 
+	Target: Public (Class) GRPCClient «Focus»
+
+
+  
+
+Order
+Class in package 'Entity'
+
+Order 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+Patient
+Class in package 'Entity'
+
+Patient 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+STData
+Class in package 'Entity'
+
+STData 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/16/2025.  Last modified 9/27/2025
+
+ATTRIBUTES
+
+   stLevels : float[]  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   stSlopes : float[]  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   heartrate : float  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   timestamp : string  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   averageComplexes : float[][]  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   beatsAveragedCount : int  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   confidence : float  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+ASSOCIATIONS
+
+   Association (direction: Unspecified)
+
+Source: Public (Class) STData 
+	Target: Public (Class) GRPCClient «Focus»
+
+
+  
+
+StressTest
+Class in package 'Entity'
+
+StressTest 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+User
+Class in package 'Entity'
+
+User 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+    
+
+ 
+Intractor
+Package in package 'Starter Class Diagram'
+
+Intractor
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/27/2025.  Last modified 9/27/2025
+
+
+
+ECG
+Class «Focus» in package 'Intractor'
+
+ECG 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/15/2025.  Last modified 9/27/2025
+
+  
+
+ECGDataEventArgs
+Class in package 'Intractor'
+
+ECGDataEventArgs 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/15/2025.  Last modified 9/27/2025
+
+  
+
+GRPCClient
+Class «Focus» in package 'Intractor'
+
+GRPCClient 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+OUTGOING STRUCTURAL RELATIONSHIPS
+
+   Realization from «Focus» GRPCClient to  IGRPCClient
+[ Direction is 'Source -> Destination'. ]
+
+
+ATTRIBUTES
+
+   _channel : GrpcChannel  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   _client : ECGStreamerClient  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   _cancellationTokenSource : CancellationTokenSource  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+ASSOCIATIONS
+
+   Association (direction: Unspecified)
+
+Source: Public (Class) STData 
+	Target: Public (Class) GRPCClient «Focus»
+
+
+   Association (direction: Unspecified)
+
+Source: Public (Class) HeartRateData 
+	Target: Public (Class) GRPCClient «Focus»
+
+
+OPERATIONS
+
+   ConnectAsync (ip : string , port : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   GetCurrentConfigAsync () : DSPConfig Public
+
+Properties:  
+Implements = IGRPCClient.GetCurrentConfigAsync
+ImplementsGuid = {A311165A-2AC2-43d8-A3C4-BB3F736ECC76}
+[ Stereotype is «async». Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   Disconnect () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   TriggerPrintAsync (reason : string ) : DSPResponse Public
+
+Properties:  
+Implements = IGRPCClient.TriggerPrintAsync
+ImplementsGuid = {1CADC9D1-34C9-4f85-A249-0694429451C7}
+[ Stereotype is «async». Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   UpdateDSPConfigAsync (config : DSPConfig ) : ConfigResponse Public
+
+Properties:  
+Implements = IGRPCClient.UpdateDSPConfigAsync
+ImplementsGuid = {7558D6E7-95A8-4ee7-A5D5-A9BE5647817C}
+[ Stereotype is «async». Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+HRDataEventArgs
+Class in package 'Intractor'
+
+HRDataEventArgs 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/15/2025.  Last modified 9/27/2025
+
+  
+
+STDataEventArgs
+Class in package 'Intractor'
+
+STDataEventArgs 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/15/2025.  Last modified 9/27/2025
+
+  
+
+IGRPCClient
+Interface in package 'Intractor'
+
+IGRPCClient 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/15/2025.  Last modified 9/27/2025
+
+INCOMING STRUCTURAL RELATIONSHIPS
+
+   Realization  from «Focus» GRPCClient to  IGRPCClient
+[ Direction is 'Source -> Destination'. ]
+
+
+OPERATIONS
+
+   GetCurrentConfigAsync () : DSPConfig Public
+[ Stereotype is «async». Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   TriggerPrintAsync (reason : string ) : DSPResponse Public
+[ Stereotype is «async». Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   UpdateDSPConfigAsync (config : DSPConfig ) : ConfigResponse Public
+[ Stereotype is «async». Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IIntractable
+Interface in package 'Intractor'
+
+IIntractable 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/15/2025.  Last modified 9/27/2025
+
+    
+
+ 
+Presenter
+Package in package 'Starter Class Diagram'
+
+Presenter
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/27/2025.  Last modified 9/27/2025
+
+
+
+PAverage
+Class «Focus» in package 'Presenter'
+
+PAverage 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+PAverageComplex
+Class «Focus» in package 'Presenter'
+
+PAverageComplex 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+PContextView
+Class «Focus» in package 'Presenter'
+
+PContextView 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+OUTGOING STRUCTURAL RELATIONSHIPS
+
+   Realization from «Focus» PContextView to  IPContextView
+[ Direction is 'Source -> Destination'. ]
+
+
+ATTRIBUTES
+
+   leadNumber : int  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+OPERATIONS
+
+   RegisterEvent (start : int , end : int , name : string ) : void Public
+
+Properties:  
+Implements = IPContextView.registerEvent
+ImplementsGuid = {8EC8B444-1F6F-4ee8-8F26-4254771EBD50}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   UpdateEvent (start : int , end : int , name : string ) : void Public
+
+Properties:  
+Implements = IPContextView.updateEvent
+ImplementsGuid = {C352842D-B0C0-416d-9710-231943BBD2E2}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   DeleteEvent (start : int , end : int , name : string ) : void Public
+
+Properties:  
+Implements = IPContextView.deleteEvent
+ImplementsGuid = {9CDC0695-136C-4a88-94BB-41D3B91B4EBB}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ChangeLead (leadIdx : int ) : void Public
+
+Properties:  
+Implements = IPContextView.changeLead
+ImplementsGuid = {578AE3CA-97EC-4973-B025-2A30B693691C}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   GetTestInfo () : void Public
+
+Properties:  
+Implements = IPContextView.getTestInfo
+ImplementsGuid = {543B5FB5-B62C-4345-80CD-532E8565D462}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+PRealtime
+Class «Focus» in package 'Presenter'
+
+PRealtime 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+PRegisterPatient
+Class «Focus» in package 'Presenter'
+
+PRegisterPatient 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+PRegisterUser
+Class «Focus» in package 'Presenter'
+
+PRegisterUser 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+PSTProfile
+Class «Focus» in package 'Presenter'
+
+PSTProfile 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+PTrends
+Class «Focus» in package 'Presenter'
+
+PTrends 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+PWindowTiles
+Class «Focus» in package 'Presenter'
+
+PWindowTiles 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+  
+
+PZoomedST
+Class «Focus» in package 'Presenter'
+
+PZoomedST 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/27/2025
+
+ATTRIBUTES
+
+   leadNumber : int  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+  
+
+IPAverageComplex
+Interface in package 'Presenter'
+
+IPAverageComplex 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/18/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   ReceiveSTData (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ChangeZoomedLead (leadNumber : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IPContextView
+Interface in package 'Presenter'
+
+IPContextView 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+INCOMING STRUCTURAL RELATIONSHIPS
+
+   Realization  from «Focus» PContextView to  IPContextView
+[ Direction is 'Source -> Destination'. ]
+
+
+OPERATIONS
+
+   RegisterEvent (start : int , end : int , name : string ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   UpdateEvent (start : int , end : int , name : string ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   DeleteEvent (start : int , end : int , name : string ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ChangeLead (leadIdx : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   GetTestInfo () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IPContextView
+Interface in package 'Presenter'
+
+IPContextView 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/15/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   registerEvent (start : int , end : int , name : string ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   updateEvent (start : int , end : int , name : string ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   deleteEvent (start : int , end : int , name : string ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   changeLead (leadIdx : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   getTestInfo () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IPRealtime
+Interface in package 'Presenter'
+
+IPRealtime 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   ReceiveNewChunk (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ToggleLPFilter (value : bool ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ToggleACFilter (value : bool ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ToggleHPFilter (value : bool ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ToggleBaselineFilter (value : bool ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ToggleSTEFFilter (value : bool ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IPresentable
+Interface in package 'Presenter'
+
+IPresentable 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/13/2025.  Last modified 9/27/2025
+
+  
+
+IPSTPRofile
+Interface in package 'Presenter'
+
+IPSTPRofile 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/18/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   ReceiveSTData () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IPTrends
+Interface in package 'Presenter'
+
+IPTrends 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/18/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   ReceiveSTData () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IPZoomedST
+Interface in package 'Presenter'
+
+IPZoomedST 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/18/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   ReceiveSTData (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ChangeLead (leadNumber : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+    
+
+ 
+Router
+Package in package 'Starter Class Diagram'
+
+Router
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/27/2025.  Last modified 9/27/2025
+
+  
+
+ 
+View
+Package in package 'Starter Class Diagram'
+
+View
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/27/2025.  Last modified 9/27/2025
+
+
+
+GeneralGraph
+Class in package 'View'
+
+GeneralGraph 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+INCOMING STRUCTURAL RELATIONSHIPS
+
+   Realization  from «Focus» VTrends to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+   Realization  from «Focus» VContextView to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+   Realization  from «Focus» VZoomedST to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+   Realization  from «Focus» VAverageComplex to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+   Realization  from «Focus» VRealtime to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+   Realization  from «Focus» VSTProfile to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+ATTRIBUTES
+
+   chart : LightningChart  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+OPERATIONS
+
+   createChart () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   onChartLoaded (sender : Object , event : RoutedEventArgs ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+VAverageComplex
+Class «Focus» in package 'View'
+
+VAverageComplex 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/16/2025.  Last modified 9/27/2025
+
+OUTGOING STRUCTURAL RELATIONSHIPS
+
+   Realization from «Focus» VAverageComplex to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+OPERATIONS
+
+   CreateChart () : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   OnChartLoaded (sender : Object , event : RoutedEventArgs ) : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AppendSamples (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ChangeLayout () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+VContextView
+Class «Focus» in package 'View'
+
+VContextView 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+OUTGOING STRUCTURAL RELATIONSHIPS
+
+   Realization from «Focus» VContextView to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+   Realization from «Focus» VContextView to  IVContextView
+[ Direction is 'Source -> Destination'. ]
+
+
+ATTRIBUTES
+
+   queue : Queue<float[]>  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   stopWatch : StopWatch  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   queueLock : Object  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   offline : bool  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   currentChunk : float[]  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+OPERATIONS
+
+   AnnotateEvent (start : int , end : int , name : string ) : void Public
+
+Properties:  
+Implements = IVContextView.annotateEvent
+ImplementsGuid = {8CEE09DE-21E0-4d30-BD9F-E50313432E10}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   CreateChart () : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AppendSamples (data : float[] ) : void Public
+
+Properties:  
+Implements = IVContextView.appendSamples
+ImplementsGuid = {2560D8F1-2936-4286-B0D3-B9279757DC21}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   OnChartLoaded (sender : Object , event : RoutedEventArgs ) : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[] ) : void Public
+
+Properties:  
+Implements = IVContextView.refreshData
+ImplementsGuid = {E30C793F-D27D-48de-ACA9-BD1134281596}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   UpdateEventInfo (stage : int , time : int ) : void Public
+
+Properties:  
+Implements = IVContextView.updateEventInfo
+ImplementsGuid = {1BFE6B67-E4B4-46e0-8E97-745CA00F72B1}
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   FeedData () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   Start () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   Stop () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+VRealtime
+Class «Focus» in package 'View'
+
+VRealtime 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+OUTGOING STRUCTURAL RELATIONSHIPS
+
+   Realization from «Focus» VRealtime to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+ATTRIBUTES
+
+   currentChunk : float[][]  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   offline : bool  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   queue : Queue<float[][]>  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   queueLock : Object  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   stopWatch : StopWatch  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+   layout : int  Private
+[ Is static False. Containment is Not Specified. ]
+
+
+OPERATIONS
+
+   CreateChart () : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   OnChartLoaded (sender : Object , event : RoutedEventArgs ) : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AppendSamples (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   FeedData () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   Start () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   Stop () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ChangeLayout () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+VZoomedST
+Class «Focus» in package 'View'
+
+VZoomedST 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/18/2025.  Last modified 9/27/2025
+
+OUTGOING STRUCTURAL RELATIONSHIPS
+
+   Realization from «Focus» VZoomedST to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+OPERATIONS
+
+   CreateChart () : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   OnChartLoaded (sender : Object , event : RoutedEventArgs ) : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AppendSamples (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   ChangeLayout () : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IVAverageComplex
+Interface in package 'View'
+
+IVAverageComplex 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/18/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   AppendSamples (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AnnotateST (stLevels : float[] , stSlopes : float[] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IVContextView
+Interface in package 'View'
+
+IVContextView 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+INCOMING STRUCTURAL RELATIONSHIPS
+
+   Realization  from «Focus» VContextView to  IVContextView
+[ Direction is 'Source -> Destination'. ]
+
+
+OPERATIONS
+
+   AnnotateEvent (start : int , end : int , name : string ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AppendSamples (data : float[] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   UpdateEventInfo (stage : int , time : int ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IViewable
+Interface in package 'View'
+
+IViewable 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+  
+
+IVRealtime
+Interface in package 'View'
+
+IVRealtime 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/14/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   AppendSamples (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IVZoomedST
+Interface in package 'View'
+
+IVZoomedST 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/18/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   AppendSamples (data : float[] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AnnotateST (stLevel : float , stSlope : float ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+    
+
+Entity
+Component in package 'Starter Class Diagram'
+
+Entity 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/13/2025
+
+  
+
+Intractor
+Component in package 'Starter Class Diagram'
+
+Intractor 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/13/2025
+
+  
+
+Presenter
+Component in package 'Starter Class Diagram'
+
+Presenter 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/13/2025
+
+  
+
+Router
+Component in package 'Starter Class Diagram'
+
+Router 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/13/2025
+
+ELEMENTS OWNED BY Router
+
+   MainAppController : Class «Focus»
+
+
+ 
+
+MainAppController
+Class «Focus» owned by 'Router', in package 'Starter Class Diagram'
+
+MainAppController 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/27/2025.  Last modified 9/27/2025
+
+   
+
+View
+Component in package 'Starter Class Diagram'
+
+View 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/11/2025.  Last modified 9/13/2025
+
+ELEMENTS OWNED BY View
+
+   VLogin : Class «Focus»
+
+
+   VSTProfile : Class «Focus»
+
+
+   VTrends : Class «Focus»
+
+
+   IVSTProfile : Interface 
+
+
+   IVTrends : Interface 
+
+
+ 
+
+VLogin
+Class «Focus» owned by 'View', in package 'Starter Class Diagram'
+
+VLogin 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/27/2025.  Last modified 9/27/2025
+
+  
+
+VSTProfile
+Class «Focus» owned by 'View', in package 'Starter Class Diagram'
+
+VSTProfile 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/27/2025.  Last modified 9/27/2025
+
+OUTGOING STRUCTURAL RELATIONSHIPS
+
+   Realization from «Focus» VSTProfile to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+OPERATIONS
+
+   CreateChart () : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   OnChartLoaded (sender : Object , event : RoutedEventArgs ) : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AppendSamples (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+VTrends
+Class «Focus» owned by 'View', in package 'Starter Class Diagram'
+
+VTrends 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/27/2025.  Last modified 9/27/2025
+
+OUTGOING STRUCTURAL RELATIONSHIPS
+
+   Realization from «Focus» VTrends to  GeneralGraph
+[ Direction is 'Source -> Destination'. ]
+
+
+OPERATIONS
+
+   CreateChart () : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   OnChartLoaded (sender : Object , event : RoutedEventArgs ) : void Public
+
+Properties:  
+override = true
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AppendSamples (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[][] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IVSTProfile
+Interface owned by 'View', in package 'Starter Class Diagram'
+
+IVSTProfile 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/27/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   AppendSamples (data : float[] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AnnotateST (stLevel : float , stSlope : float ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+  
+
+IVTrends
+Interface owned by 'View', in package 'Starter Class Diagram'
+
+IVTrends 
+Version 1.0  Phase 1.0  Proposed
+mehrshad created on 9/27/2025.  Last modified 9/27/2025
+
+OPERATIONS
+
+   AppendSamples (data : float[] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   RefreshData (data : float[] ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+   AnnotateST (stLevel : float , stSlope : float ) : void Public
+[ Is static False. Is abstract False. Is return array False. Is query False. Is synchronized False. ]
+
+
+     
+
+
+

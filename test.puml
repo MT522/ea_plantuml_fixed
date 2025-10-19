@@ -1,0 +1,324 @@
+@startuml ECG Stress Test VIPER Architecture
+
+!theme spacelab
+
+package "Application" {
+    class MainAppController
+    note right of MainAppController
+        All dependency injection (composition/wiring)
+        happens here at startup.
+        Router controls app workflow and view switching.
+    end note
+}
+
+package "Entity" as Entity {
+    interface IEntity
+    interface IEvent extends IEntity
+    interface IHeartRateData extends IEntity
+    interface IOrder extends IEntity
+    interface IPatient extends IEntity
+    interface ISTData extends IEntity
+    interface IStressTest extends IEntity
+    interface IUser extends IEntity
+
+    class Event implements IEvent {
+        -startTime: int
+        -endTime: int
+        -name: int
+    }
+
+    class HeartRateData implements IHeartRateData {
+        -heartrate: float
+        -timestamp: string
+        -hrPerLead: float[]
+        -confidence: float
+    }
+
+    class Order implements IOrder
+    class Patient implements IPatient
+
+    class STData implements ISTData {
+        -stLevels: float[]
+        -stSlopes: float[]
+        -heartrate: float
+        -timestamp: string
+        -averageComplexes: float[][]
+        -beatsAveragedCount: int
+        -confidence: float
+    }
+
+    class StressTest implements IStressTest
+    class User implements IUser
+}
+
+package "Intractor" as Intractor {
+    interface IIntractable
+
+    interface IECG extends IIntractable
+    interface IECGDataEventArgs extends IIntractable
+    interface IHRDataEventArgs extends IIntractable
+    interface ISTDataEventArgs extends IIntractable
+
+    interface IDBManager extends IIntractable
+
+    interface IGRPCClient extends IIntractable {
+        +GetCurrentConfigAsync(): DSPConfig
+        +TriggerPrintAsync(reason: string): DSPResponse
+        +UpdateDSPConfigAsync(config: DSPConfig): ConfigResponse
+    }
+
+    class GRPCClient implements IGRPCClient {
+        -_channel: GrpcChannel
+        -_client: ECGStreamerClient
+        -_cancellationTokenSource: CancellationTokenSource
+
+        +ConnectAsync(ip: string, port: int): void
+        +GetCurrentConfigAsync(): DSPConfig
+        +Disconnect(): void
+        +TriggerPrintAsync(reason: string): DSPResponse
+        +UpdateDSPConfigAsync(config: DSPConfig): ConfigResponse
+    }
+
+    class ECG implements IECG
+
+    class ECGDataEventArgs implements IECGDataEventArgs
+    class HRDataEventArgs implements IHRDataEventArgs
+    class STDataEventArgs implements ISTDataEventArgs
+
+    class DBManager implements IDBManager {
+        +getPatient(id: int): Entity.IPatient
+        +getUser(id: int): Entity.IUser
+        +getOrder(id: int): Entity.IOrder
+        +getStressTest(id: int): Entity.IStressTest
+        +setOrder(order: Entity.IOrder): void
+        +setUser(user: Entity.IUser): void
+        +setPatient(patient: Entity.IPatient): void
+        +setStressTest(stressTest: Entity.IStressTest): void
+        +deleteOrder(id: int): void
+        +deletePatient(id: int): void
+        +deleteUser(id: int): void
+        +deleteStressTest(id: int): void
+        +createUser(user: Entity.IUser): void
+        +createPatient(patient: Entity.IPatient): void
+        +createOrder(order: Entity.IOrder): void
+        +createStressTest(stressTest: Entity.IStressTest): void
+        +createEvent(event: Entity.IEvent): void
+        +deleteEvent(id: int): void
+        +getEvent(id: int): void
+        +setEvent(event: Entity.IEvent): void
+    }
+}
+
+package "Presenter" {
+    interface IPresentable
+
+    ' Top-level presenter interfaces (1:1 with views)
+    interface IPLogin extends IPresentable
+    interface IPHome extends IPresentable
+    interface IPSettings extends IPresentable
+    interface IPUsers extends IPresentable
+    interface IPPatients extends IPresentable
+    interface IPTests extends IPresentable
+    interface IPMainStressTest extends IPresentable
+    interface IPReport extends IPresentable
+
+    ' Top-level presenter classes
+    class PLogin implements IPLogin
+    class PHome implements IPHome
+    class PSettings implements IPSettings
+    class PUsers implements IPUsers
+    class PPatients implements IPPatients
+    class PTests implements IPTests
+    class PMainStressTest implements IPMainStressTest
+    class PReport implements IPReport
+}
+
+package "View" {
+    abstract class GeneralGraph {
+        -chart: LightningChart
+        +createChart(): void
+        +onChartLoaded(sender: Object, event: RoutedEventArgs): void
+    }
+
+    interface IViewable
+
+
+    ' Top-level app views
+    interface IVLogin extends IViewable
+    interface IVHome extends IViewable
+    interface IVSettings extends IViewable
+    interface IVUsers extends IViewable
+    interface IVPatients extends IViewable
+    interface IVTests extends IViewable
+    interface IVMainStressTest extends IViewable
+    interface IVReport extends IViewable
+
+    class ContextView extends GeneralGraph {
+        -queue: Queue<float[]>
+        -stopWatch: StopWatch
+        -queueLock: Object
+        -offline: bool
+        -currentChunk: float[]
+        +AnnotateEvent(start: int, end: int, name: string): void
+        +CreateChart(): void
+        +AppendSamples(data: float[]): void
+        +OnChartLoaded(sender: Object, event: RoutedEventArgs): void
+        +RefreshData(data: float[]): void
+        +UpdateEventInfo(stage: int, time: int): void
+        +FeedData(): void
+        +Start(): void
+        +Stop(): void
+    }
+
+    class Realtime extends GeneralGraph {
+        -currentChunk: float[][]
+        -offline: bool
+        -queue: Queue<float[][]>
+        -queueLock: Object
+        -stopWatch: StopWatch
+        -layout: int
+        +CreateChart(): void
+        +OnChartLoaded(sender: Object, event: RoutedEventArgs): void
+        +AppendSamples(data: float[][]): void
+        +FeedData(): void
+        +RefreshData(data: float[][]): void
+        +Start(): void
+        +Stop(): void
+        +ChangeLayout(): void
+    }
+
+    class ZoomedST extends GeneralGraph {
+        +CreateChart(): void
+        +OnChartLoaded(sender: Object, event: RoutedEventArgs): void
+        +AppendSamples(data: float[][]): void
+        +RefreshData(data: float[][]): void
+        +ChangeLayout(): void
+    }
+
+    class AverageComplex extends GeneralGraph {
+        +CreateChart(): void
+        +OnChartLoaded(sender: Object, event: RoutedEventArgs): void
+        +AppendSamples(data: float[][]): void
+        +RefreshData(data: float[][]): void
+        +ChangeLayout(): void
+    }
+
+    class STProfile extends GeneralGraph {
+        +CreateChart(): void
+        +OnChartLoaded(sender: Object, event: RoutedEventArgs): void
+        +AppendSamples(data: float[][]): void
+        +RefreshData(data: float[][]): void
+    }
+
+    class Trends extends GeneralGraph {
+        +CreateChart(): void
+        +OnChartLoaded(sender: Object, event: RoutedEventArgs): void
+        +AppendSamples(data: float[][]): void
+        +RefreshData(data: float[][]): void
+    }
+
+    class VLogin implements IVLogin
+    class VHome implements IVHome
+    class VSettings implements IVSettings
+    class VUsers implements IVUsers
+    class VPatients implements IVPatients
+    class VTests implements IVTests
+    class VReport implements IVReport
+
+    ' Main stress test view composed of subcomponents (graphs/panels)
+    class VMainStressTest implements IVMainStressTest
+}
+
+package "Router" {
+    class AppRouter
+}
+
+' =========================================================
+' Relationships - VIPER Flow
+' =========================================================
+
+' 1. View to Presenter (View holds reference to Presenter Interface)
+IVLogin -d-> IPLogin : <<1:1>>
+IVHome -d-> IPHome : <<1:1>>
+IVSettings -d-> IPSettings : <<1:1>>
+IVUsers -d-> IPUsers : <<1:1>>
+IVPatients -d-> IPPatients : <<1:1>>
+IVTests -d-> IPTests : <<1:1>>
+IVMainStressTest -d-> IPMainStressTest : <<1:1>>
+IVReport -d-> IPReport : <<1:1>>
+
+' 2. Presenter to Interactor (Presenter holds reference to Interactor Interface)
+PLogin --> IIntractable : <<knows>>
+PHome --> IIntractable : <<knows>>
+PSettings --> IIntractable : <<knows>>
+PUsers --> IIntractable : <<knows>>
+PPatients --> IIntractable : <<knows>>
+PTests --> IIntractable : <<knows>>
+PMainStressTest --> IIntractable : <<knows>>
+PReport --> IIntractable : <<knows>>
+
+' 3. Interactor to Presenter (Interactor informs Presenter via Presenter Interface)
+IIntractable --> IPresentable : <<sends results to>>
+
+' 4. Presenter to View (Presenter updates View via View Interface)
+PLogin --> IVLogin : <<updates>>
+PHome --> IVHome : <<updates>>
+PSettings --> IVSettings : <<updates>>
+PUsers --> IVUsers : <<updates>>
+PPatients --> IVPatients : <<updates>>
+PTests --> IVTests : <<updates>>
+PMainStressTest --> IVMainStressTest : <<updates>>
+PReport --> IVReport : <<updates>>
+
+' 5. Router controls app workflow and view switching
+AppRouter --> IViewable : <<controls navigation>>
+AppRouter --> IPresentable : <<manages presenters>>
+
+' 6. Composition: VMainStressTest owns its subcomponents
+VMainStressTest *-- ContextView : <<composition>>
+VMainStressTest *-- Realtime : <<composition>>
+VMainStressTest *-- ZoomedST : <<composition>>
+VMainStressTest *-- Trends : <<composition>>
+VMainStressTest *-- STProfile : <<composition>>
+VMainStressTest *-- AverageComplex : <<composition>>
+
+' 7. Aggregation: MainAppController manages components
+MainAppController o-- PLogin : <<aggregation>>
+MainAppController o-- PHome : <<aggregation>>
+MainAppController o-- PSettings : <<aggregation>>
+MainAppController o-- PUsers : <<aggregation>>
+MainAppController o-- PPatients : <<aggregation>>
+MainAppController o-- PTests : <<aggregation>>
+MainAppController o-- PMainStressTest : <<aggregation>>
+MainAppController o-- PReport : <<aggregation>>
+MainAppController o-- VLogin : <<aggregation>>
+MainAppController o-- VHome : <<aggregation>>
+MainAppController o-- VSettings : <<aggregation>>
+MainAppController o-- VUsers : <<aggregation>>
+MainAppController o-- VPatients : <<aggregation>>
+MainAppController o-- VTests : <<aggregation>>
+MainAppController o-- VMainStressTest : <<aggregation>>
+MainAppController o-- VReport : <<aggregation>>
+MainAppController o-- ECG : <<aggregation>>
+MainAppController o-- DBManager : <<aggregation>>
+MainAppController o-- GRPCClient : <<aggregation>>
+MainAppController o-- AppRouter : <<aggregation>>
+
+' 8. Interactor to Data Model/Service
+ECG --> Entity.IHeartRateData : <<uses/maps>>
+ECG --> Entity.ISTData : <<uses/maps>>
+ECG --> IGRPCClient : <<uses service>>
+
+' 9. Data Model relationships (DBManager operates on Entities via interfaces)
+DBManager .> IUser : <<CRUD>>
+DBManager .> IPatient : <<CRUD>>
+DBManager .> IStressTest : <<CRUD>>
+
+' 10. Service realization and usage
+GRPCClient .> IHeartRateData : <<streams>>
+GRPCClient .> ISTData : <<streams>>
+
+' 11. Application Flow
+MainAppController --> AppRouter : <<starts>>
+
+@enduml
